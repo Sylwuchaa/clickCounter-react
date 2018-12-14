@@ -1,7 +1,7 @@
 class Counter extends React.Component {
   state = {
     count: 0,
-    result: 0
+    result: this.props.result
 
   }
   handleMathClick(type = 'reset', number = 1) {
@@ -15,7 +15,7 @@ class Counter extends React.Component {
       this.setState(prevState => (
           {
             count: prevState.count + 1,
-            result: 0
+            result: 0 //  <-- this.props.result  //
 
       }
       ))
@@ -42,4 +42,4 @@ class Counter extends React.Component {
   }
 }
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+ReactDOM.render(<Counter  result={10} />, document.getElementById('root'));
