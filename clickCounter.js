@@ -49,9 +49,9 @@ class Counter extends React.Component {
   render() {
     return (
       <>
-      <button onClick={this.handleMathClick('subtraction', 10)}>-10</button>
+      <button onClick={() => this.handleMathClick('subtraction', 10)}>-10</button>
       <button onClick={() => this.handleMathClick('subtraction')}>-1</button>
-      <button onClick={this.handleMathClick.bind(this, 'reset')}>Reset</button>
+      <button onClick={() => this.handleMathClick('reset')}>Reset</button>
       <button onClick={() => this.handleMathClick('addition')}>+1</button>
       <button onClick={() => this.handleMathClick('addition', 10)}>+10</button>
       <h1>Number of clicks: {this.state.count}</h1>
