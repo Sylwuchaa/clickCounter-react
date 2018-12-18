@@ -82,12 +82,22 @@ class Counter extends React.Component {
       <button onClick={() => this.handleMathClick('reset')}>Reset</button>
       <button onClick={() => this.handleMathClick('addition')}>+1</button>
       <button onClick={() => this.handleMathClick('addition', 10)}>+10</button> */}
-      <h1>Number of clicks: {this.state.count}</h1>
-      <h1>Result: {this.state.result}</h1>
+      <ResultPanel
+       result={this.state.result}
+       count={this.state.count}
+       />
       </>
 
     )
   }
+}
+const ResultPanel = (props) => {
+  return (
+    <>
+    <h1>Number of clicks: {props.count}{props.count > 10 ? <span>Przeciążenie procesora!</span> : null }</h1>
+    <h1>Result: {props.result}</h1>
+    </>
+  )
 }
 
 const MathButton = (props) => {
